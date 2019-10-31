@@ -1,0 +1,8 @@
+{
+  "name": "surfShop",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

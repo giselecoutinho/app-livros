@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>APP LIVROS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list *ngIf="!livros.length">
+      <ion-item *ngFor="let item of [0, 1, 2]">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  
+    <ion-list>
+      <ion-item-sliding *ngFor="let livro of livros">
+        <ion-item button [routerLink]="['/details', livro.id]">  
+          <ion-label>
+            {{ livro.name }}
+            <p>{{ livro.autor }}</p>
+            <p>{{ livro.anoLacamento }}</p>
+          </ion-label>
+        </ion-item>
+  
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteLivro(livro.id)">
+            <ion-icon slot="top" name="trash"></ion-icon>
+            Excluir
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button (click)="logout()" color="danger" expand="block">
+              Sair
+            </ion-button>
+          </ion-col>
+  
+          <ion-col size="6">
+            <ion-button routerLink="/details" expand="block">
+              Add Livro
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>

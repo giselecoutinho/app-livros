@@ -1,0 +1,46 @@
+img{
+    width: 100%;
+    max-width: 150px;
+}
+
+ion-slides{
+    height: 100%;
+    z-index: 1000;
+    
+    .swiper-slide {
+        flex-direction: column;
+        flex-flow: row wrap;
+        align-content: space-around;
+    }
+
+    .slide-inner{
+        width: 75%;
+        background-color: #ffcbcb;
+        border-radius: 10px;
+    }
+
+    ion-item {
+        --background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+}
+
+.ocean{
+    width: 100%;
+    height: 90%;
+
+    background-color: var(--ion-color-primary);
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    .waves{
+        width: 100%;
+        height: 100%;
+
+        background-image: url('/assets/images/waves.jpeg');
+        background-size: contain;
+        transition: all 2s;
+    }
+}
